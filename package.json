@@ -1,0 +1,23 @@
+{
+  "name": "work-packagejson",
+  "version": "1.0.1",
+  "description": "A two command tool to view and add dependencies to/from package.json.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZhukDima/test-rnd.git"
+  },
+  "keywords": [],
+  "author": "Zhuk Dmitry",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZhukDima/test-rnd"
+  },
+  "homepage": "https://github.com/ZhukDima/test-rnd",
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
+}
