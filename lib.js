@@ -50,7 +50,7 @@ function runView(...args) {
     default: {
       p: '.',
       n: 'package.json',
-    }
+    },
   };
   const parseArgs = parserArgs(args, parserOptions);
   if (parseArgs._.length !== 0) {
@@ -62,7 +62,7 @@ function runView(...args) {
   if (jsonObject === undefined) return;
   const ansObject = Object
     .keys(jsonObject)
-    .filter((elem) => /^(name|version|(d|devD|optionalD)ependencies)$/.test(elem))
+    .filter((elem) => /^(name|version|(d|(dev|optional)D)ependencies)$/.test(elem))
     .reduce((accum, elem) => {
       accum[elem] = jsonObject[elem];
       return accum;
@@ -95,7 +95,7 @@ function runAdd(...args) {
     return;
   }
   const allTrueFlag = Object
-    .entries({ P: parseArgs.P, D: parseArgs.D, O: parseArgs.O })
+    .entries((({P, D, O}) => ({P, D, O}))(parseArgs))
     .filter(([key, value]) => value);
   if (allTrueFlag.length > 1) {
     console.error(message.addErrorCountSaveFlags);
