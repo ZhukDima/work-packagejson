@@ -1,6 +1,6 @@
 {
   "name": "work-packagejson",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A two command tool to view and add dependencies to/from package.json.",
   "main": "index.js",
   "scripts": {
