@@ -5,7 +5,7 @@ const fs = require('fs');
 const { exec } = require('child_process');
 
 /**
- * @param {undefined|'help'|'-h'|'--help'|'version'|'-v'|'--version'|'view'} type 
+ * @param {undefined|'help'|'-h'|'--help'|'version'|'-v'|'--version'|'view'|string} type 
  * @param {...string} args 
  */
 module.exports.runMain = function runMain(type, ...args) {
@@ -24,7 +24,7 @@ module.exports.runMain = function runMain(type, ...args) {
 }
 
 /**
- * @param {string} command 
+ * @param {undefined|'view'|'add'|string} command 
  */
 function runHelp(command) {
   switch (command) {
@@ -40,9 +40,9 @@ function runHelp(command) {
 }
 
 /**
- * @param {string} command 
+ * @param {undefined|string} command 
  */
- function runVersion(command) {
+function runVersion(command) {
   switch (command) {
     case undefined:
       console.log(message.mainVersion); break;
@@ -105,7 +105,7 @@ function runAdd(...args) {
     return;
   }
   const allTrueFlag = Object
-    .entries((({P, D, O}) => ({P, D, O}))(parseArgs))
+    .entries((({ P, D, O }) => ({ P, D, O }))(parseArgs))
     .filter(([key, value]) => value);
   if (allTrueFlag.length > 1) {
     console.error(message.addErrorCountSaveFlags);
