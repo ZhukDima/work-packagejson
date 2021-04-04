@@ -10,12 +10,10 @@ const { exec } = require('child_process');
  */
 module.exports.runMain = function runMain(type, ...args) {
   switch (type) {
-    case undefined: case '-h': case '--help':
-      console.log(message.mainHelp); break;
-    case 'help':
+    case undefined: case '-h': case '--help': case 'help':
       runHelp(args[0]); break;
     case 'version': case '-v': case '--version':
-      console.log(message.mainVersion); break;
+      runVersion(args[0]); break;
     case 'view':
       runView(...args); break;
     case 'add':
@@ -38,6 +36,18 @@ function runHelp(command) {
       console.log(message.addHelp); break;
     default:
       console.log(message.helpErrorUnknownCommand, command); break;
+  }
+}
+
+/**
+ * @param {string} command 
+ */
+ function runVersion(command) {
+  switch (command) {
+    case undefined:
+      console.log(message.mainVersion); break;
+    default:
+      console.log(message.versionErrorUnknownCommand, command); break;
   }
 }
 

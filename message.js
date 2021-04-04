@@ -23,6 +23,10 @@ module.exports.helpErrorUnknownCommand = `
 work-packagejson help %s: unknown help topic. 
 Run 'work-packagejson help'.`.slice(1);
 
+module.exports.versionErrorUnknownCommand = `
+work-packagejson version %s: unknown version topic. 
+Run 'work-packagejson version'.`.slice(1);
+
 module.exports.viewHelp = `
 Usage: work-packagejson view [-p <path to file>] [-n <file name>]
 
