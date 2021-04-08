@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": "./index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ZhukDima/test-rnd.git"
@@ -14,10 +15,11 @@
   "author": "Zhuk Dmitry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ZhukDima/test-rnd"
+    "url": "https://github.com/ZhukDima/test-rnd/issues"
   },
   "homepage": "https://github.com/ZhukDima/test-rnd",
   "dependencies": {
     "minimist": "^1.2.5"
-  }
+  },
+  "devDependencies": {}
 }
